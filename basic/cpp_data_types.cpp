@@ -22,23 +22,31 @@
      The c++ cerr is the standard error stream
      which is used to output the errors.
      This is also an instance of the ostream class.
-*/
 
+  4: buffered standard error stream
+     This is also an instance of iostream class
+     and is used to show error messages but unlike cerr
+     the error is first inserted into a buffer and is stored
+     in the buffer until it is not fully filled.
+     The error message will be displayed to screen too.
+*/
 
 #include <iostream>
 using namespace std;
 
-
-int main(){
+int main() {
   // cout function used to display output to the screen
-  cout<<"Hello World"<<endl; // endl is a keyword the gives a line break.
+  cout << "Hello World" << endl; // endl is a keyword the gives a line break.
 
   // cin function used to take input from the console
   int x;
-  cin>>x;
-  cout<<x<<endl;
+  cin >> x;
+  cout << x << endl;
 
   // cerr function used to output the error message
-  cerr<< "A lot of errors "<<endl;
+  cerr << "A lot of errors " << endl;
 
+  // clog fucntion used to output the error message
+  // but it first stores the message inside a buffer
+  clog << "More Errors" << endl;
 }
